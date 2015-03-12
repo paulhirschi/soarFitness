@@ -1,0 +1,65 @@
+<div class="contentContainer">
+  <div class="container" ng-show="!client.isLoggedIn">
+    <h3 class="headline">Welcome to the soar<span class="green">Fitness</span> App</h3>
+    <div class="colContainer">
+      <div class="loginForm">
+        <h2>Please login to get started:</h2>
+        <form name="form" ng-submit="submitLogin()">
+          <div class="formError" ng-show="form.clientName.$invalid && form.clientName.$dirty">
+            <p ng-show="form.clientName.$error.required || form.clientName.$error.pattern">Please enter your client's name.</p>
+          </div>
+          <input type="text" name="clientName" ng-model="client.name" placeholder="client name" ng-pattern="/^[a-zA-Z]+$/" required>
+          <div class="formError" ng-show="form.clientAge.$invalid && form.clientAge.$dirty">
+            <p ng-show="form.clientAge.$error.required">Please enter your client's age.</p>
+            <p ng-show="form.clientAge.$error.number">Please enter a numberic value for age. Gracious.</p>
+          </div>
+          <input type="number" name="clientAge" ng-model="client.age" placeholder="client age" required>
+          <div class="formError" ng-show="form.clientWeight.$invalid && form.clientAge.$dirty">
+            <p ng-show="form.clientAge.$error.required">Please enter your client's weight.</p>
+            <p ng-show="form.clientAge.$error.number">Please enter a numberic value for weight. Gracious.</p>
+          </div>
+          <input type="number" name="clientWeight" ng-model="client.weight" placeholder="client weight in pounds" required>
+          <input type="radio" id="male" name="sex" ng-model="client.gender" value="Male" required>
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="sex" ng-model="client.gender" value="Female" required>
+          <label for="female">Female</label>
+          <button type="submit" class="button loginButton" ng-disabled="form.$invalid">Login <i class="fa fa-sign-in"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="colContainer">
+      <h2>What is soarFitness.app?</h2>
+      <p>
+        In a word&hellip;<span class="orange">awesome</span>.  It is a body composition assessment tool designed for personal trainers, but accessible to both novice &amp; professional fitness enthusiast.
+      </p>
+      <p>
+        It simplifies body composition assessment by cutting out time spend with a calculator to let you focus your time on <span class="green">goal setting</span> &amp; <span class="green">dream achieving</span>.
+      </p>
+      <h2>How do I use the app?</h2>
+      <p>
+        After you log in your client's info, you can have a complete body composition assessments in a few short clicks.  Composition assessments include:
+      </p>
+      <p>
+        <i class="fa fa-caret-right green"></i> Max Heart Rate
+      </p>
+      <p>
+        <i class="fa fa-caret-right green"></i> Target Heart Rate based on training zone
+      </p>
+      <p>
+        <i class="fa fa-caret-right green"></i> BMI
+        </h4>
+        <p>
+          <i class="fa fa-caret-right green"></i> Body Fat Percentage
+        </p>
+        <p>
+          <i class="fa fa-caret-right green"></i> Total Body Fat Mass
+        </p>
+        <p>
+          <i class="fa fa-caret-right green"></i> Total Body Lean Mass
+        </p>
+        <p>
+          <i class="fa fa-caret-right green"></i> Ideal body weight based on body fat percentage goal
+        </p>
+      </div>
+    </div>
+  </div>

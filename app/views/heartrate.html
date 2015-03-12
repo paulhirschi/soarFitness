@@ -1,0 +1,57 @@
+<div class="contentContainer">
+  <div class="container">
+    <h3 class="headline">
+    Target Heart Rate
+    </h3>
+    <div class="colContainer">
+      <h1>
+      THR: <span class="green">{{ client.thr }}</span>
+      </h1>
+      <h4>
+      65% to 75% of MaxHR
+      </h4>
+      <button class="button" ng-click="getThr(0.65, 0.75, 1);">Zone 1</button>
+      <h4>
+      76% to 85% of MaxHR
+      </h4>
+      <button class="button" ng-click="getThr(0.76, 0.85, 2);">Zone 2</button>
+      <h4>
+      86% to 95% of MaxHR
+      </h4>
+      <button class="button" ng-click="getThr(0.86, 0.95, 3);">Zone 3</button>
+    </div>
+    <div class="colContainer">
+      <table class="bmiTable">
+        <!-- Table Head -->
+        <thead>
+          <th colspan="2">Target Heart Rate Training Zones</th>
+        </thead>
+        <!-- Table Body -->
+        <tbody>
+          <tr>
+            <th>Training Zone</th>
+            <th>Purpose</th>
+          </tr>
+          <tr ng-class="{'select': (client.zone == 1)}">
+            <th>One</th>
+            <td>Builds aerobic base and aids in recovery</td>
+          </tr>
+          <tr ng-class="{'select': (client.zone == 2)}">
+            <th>Two</th>
+            <td>Increases aerobic and anaerobic endurance</td>
+          </tr>
+          <tr ng-class="{'select': (client.zone == 3)}">
+            <th>Three</th>
+            <td>Builds high-end work capacity</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>
+      Remember:
+      </h3>
+      <hp>
+      Exercise intensity levels may need to be lower than 65% (e.g. 40 - 55%) depending on {{ client.name + "'s" }} initial physical condition status.
+      </hp>
+    </div>
+  </div>
+</div>

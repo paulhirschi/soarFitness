@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto|Oswald' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="trainingAssistantApp">
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header ng-controller="NavCtrl">
+      <a ui-sref="home"><p><i class="fa fa-paper-plane-o"></i> <span class="smaller">soar</span>fitness<span class="smaller">.app</span></p></a>
+      <a class="navicon-button x" ng-click="showMenu=!showMenu" ng-class="{'open': showMenu}"  ng-show="client.isLoggedIn">
+        <div class="navicon"></div>
+      </a>
+      <div class="hiddenMenu" ng-show="showMenu">
+        <div class="navDashboard">
+          <h2>Quick Look Dashboard</h2>
+          <h4>Stats for <span class="green">{{ client.name }}</span>:</h4>
+          <div class="dashItem">Age:<br><span class="bigger black">{{ client.age }}</span></div>
+          <div class="dashItem">Gender:<br><span class="bigger black">{{ client.gender }}</span></div>
+          <div class="dashItem">Max HR:<br><span class="bigger black">{{ client.mhr }}</span></div>
+          <div class="dashItem">Target HR:<br><span class="bigger black">{{ client.thr }}</span></div>
+          <div class="dashItem">BMI:<br><span class="bigger black">{{ client.bmi }}</span></div>
+        </div>
+        <ul>
+          <li ng-repeat="item in menu" ui-sref-active="active" class="active"><a ng-click="showMenu=!showMenu" ui-sref="{{item.state}}" >{{item.label}}</a></li>
+          <li class="resetApp"><a ng-click="showMenu=!showMenu; resetApp()" ui-sref="home">Reset Data</a></li>
+        </ul>
+      </div>
+      <div class="headerDashboard" ng-show="client.isLoggedIn">
+        <div class="container">
+          <div class="headerDashItem" ng-show="client.name">
+            <span class="purple">Client: </span><br>{{ client.name }}
+          </div>
+          <div class="headerDashItem" ng-show="client.age">
+            <span class="purple">Age: </span><br>{{ client.age }}
+          </div>
+          <div class="headerDashItem" ng-show="client.mhr">
+            <span class="purple">MaxHR: </span><br>{{ client.mhr }}
+          </div>
+          <div class="headerDashItem" ng-show="client.thr">
+            <span class="purple">TargetHR: </span><br>{{ client.thr }}
+          </div>
+          <div class="headerDashItem" ng-show="client.bmi">
+            <span class="purple">BMI: </span><br>{{ client.bmi }}
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Add your site or application content here -->
+    <div ui-view class="mainView"></div>
+    <footer>
+      <p><i class="fa fa-paper-plane-o"></i> &copy; <a href="http://www.paulhirschi.com" target="_blank"><span class="green">paul</span>hirschi</a></p>
+    </footer>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <!-- <script>
+    !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+    (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+    r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+    }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+    </script> -->
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/nav.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/dashboard.js"></script>
+    <script src="scripts/controllers/bodycomp.js"></script>
+    <script src="scripts/controllers/targetHeartRate.js"></script>
+    <script src="scripts/service.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

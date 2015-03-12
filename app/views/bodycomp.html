@@ -1,0 +1,159 @@
+<div class="contentContainer">
+  <div class="container">
+    <h3 class="headline">
+    Body Mass Index
+    </h3>
+    <div class="colContainer">
+      <h1>
+      BMI: <span class="green">{{ client.bmi }}</span>
+      </h1>
+      <form ng-submit="bmiCalc()">
+        <input type="number" ng-model="bmiHeight" placeholder="height in inches" required>
+        <button type="submit" class="button">Calculate</button>
+      </form>
+    </div>
+    <div class="colContainer">
+      <table class="bmiTable">
+        <!-- Table Header -->
+        <thead>
+          <tr>
+            <th colspan='3'>
+              Body Mass Index Classification
+            </th>
+          </tr>
+        </thead>
+        <!-- Table Body -->
+        <tbody>
+          <tr>
+            <th>BMI</th>
+            <th>Disease Risk</th>
+            <th>Classification</th>
+          </tr>
+          <tr ng-class="{'select': (client.bmi > 0 && client.bmi < 18.5)}">
+            <th>&lt; 18.5</th>
+            <td>Increased</td>
+            <td>Underweight</td>
+          </tr>
+          <tr ng-class="{'select': (client.bmi >= 18.6 && client.bmi <= 21.99)}">
+            <th>18.6 &ndash; 21.99</th>
+            <td>Low</td>
+            <td>Acceptable</td>
+          </tr>
+          <tr ng-class="{'select': (client.bmi >= 22 && client.bmi <= 24.99)}">
+            <th>22 &ndash; 24.99</th>
+            <td>Very Low</td>
+            <td>Acceptable</td>
+          </tr>
+          <tr ng-class="{'select': (client.bmi >= 25 && client.bmi <= 29.99)}">
+            <th>25 &ndash; 29.99</th>
+            <td>Increased</td>
+            <td>Overweight</td>
+          </tr>
+          <tr ng-class="{'select': (client.bmi >= 30 && client.bmi <= 34.99)}">
+            <th>30 &ndash; 34.99</th>
+            <td>High</td>
+            <td>Obese</td>
+          </tr>
+          <tr ng-class="{'select': (client.bmi >= 35 && client.bmi <= 39.99)}">
+            <th>35 &ndash; 39.99</th>
+            <td>Very High</td>
+            <td>Obesity II</td>
+          </tr>
+          <tr ng-class="{'select': (client.bmi >= 40)}">
+            <th>&ge; 40</th>
+            <td>Exremely High</td>
+            <td>Obesity II</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Why is BMI Important?</h3>
+      <p>
+        Here's some knowledge on what BMI is, why it's important to know, and how you can use this number to better your health and fitness level.
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <h3 class="headline">
+    Body Fat Percentage
+    </h3>
+    <div class="colContainer">
+      <h1>
+      Fat%: <span class="green">{{ client.fatPercent }}</span>
+      </h1>
+      <form ng-submit="bodyFatCalc()">
+        <input type="number" ng-model="bodyFatBi" placeholder="bicept" required>
+        <input type="number" ng-model="bodyFatTri" placeholder="tricept" required>
+        <input type="number" ng-model="bodyFatSub" placeholder="subscapular" required>
+        <input type="number" ng-model="bodyFatIliac" placeholder="iliac crest" required>
+        <button type="submit" class="button">Calculate</button>
+      </form>
+    </div>
+    <div class="colContainer">
+      <p class="noBottomMargin">Amount of {{ client.name }}'s weight is fat:</p>
+      <h1 class="noTopMargin">Fat Mass: <span class="green">{{ client.fatMass }}</span></h1>
+      <p class="noBottomMargin">Amount of {{ client.name }}'s weight is other than fat:</p>
+      <h1 class="noTopMargin">Lean Mass: <span class="green">{{ client.leanMass }}</span></h1>
+      <table class="bmiTable">
+        <!-- table head -->
+        <thead>
+          <tr>
+            <th colspan="3">% Fat Recommendations</th>
+          </tr>
+        </thead>
+        <!-- Table Body -->
+        <tbody>
+          <tr>
+            <th>% Fat Range</th>
+            <th>Men</th>
+            <th>Women</th>
+          </tr>
+          <tr>
+            <th>Essential</th>
+            <td>3-5%</td>
+            <td>8-12%</td>
+          </tr>
+          <tr>
+            <th>Athletic</th>
+            <td>5-13%</td>
+            <td>12-22%</td>
+          </tr>
+          <tr>
+            <th>Recommended (34 yrs. or less)</th>
+            <td>8-22%</td>
+            <td>10-25%</td>
+          </tr>
+          <tr>
+            <th>Recommended (35-55 yrs.)</th>
+            <td>10-25%</td>
+            <td>23-38%</td>
+          </tr>
+          <tr>
+            <th>Recommended (More than 56 yrs.)</th>
+            <td>10-25%</td>
+            <td>25-38%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="container">
+    <h3 class="headline">
+    Ideal Body Weight
+    </h3>
+    <div class="colContainer">
+      <h1>
+      Ideal Weight: <span class="green">{{ client.idealWeight }}</span>
+      </h1>
+      <form ng-submit="idealWeightCalc()">
+        <input type="number" ng-model="desiredPerc" placeholder="desired % body fat" required>
+        <button type="submit" class="button">Calculate</button>
+      </form>
+    </div>
+    <div class="colContainer">
+      <h4 class="orange">You must calculate {{ client.name + "'s"}} Body Fat Percentage above before you can calculate the <span class="green">Ideal Weight</span>.</h4>
+      <h3>
+      Use the chart above to determine a desired body fat % for <span class="green">{{ client.name }}</span>.  Enter that number to the left to determine <span class="green">{{ client.name }}'s</span> goal weight for that percentage of body fat.
+      </h3>
+    </div>
+  </div>
+</div>
