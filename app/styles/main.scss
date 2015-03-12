@@ -6,238 +6,184 @@
 // Main Document Setup
 // ===============================================
 
-*
-{
+* {
     box-sizing: border-box;
 }
 
-html
-{
-    width: 100%;
+html {
     height: 100%;
+    width: 100%;
 }
 
-body
-{
-    font-family: $body;
-
-    position: relative;
-
-    min-width: 75em;
-    height: 100%;
-
-    color: $white;
+body {
     background-color: $black;
+    color: $white;
+    font-family: $body;
+    height: 100%;
+    min-width: 75em;
+    position: relative;
 }
 
 h1,
 h2,
 h3,
-h4
-{
+h4 {
     font-family: $title;
-
     margin-bottom: .25em;
 }
 
-h1
-{
+h1 {
     font-size: 3.998em;
 }
-h2
-{
+h2 {
     font-size: 2.827em;
 }
-h3
-{
+h3 {
     font-size: 1.999em;
 }
-h4
-{
+h4 {
     font-size: 1.414em;
 }
 
-a
-{
-    text-decoration: none;
-
+a {
     color: inherit;
+    text-decoration: none;
 }
 
-ul
-{
-    li
-    {
+ul {
+    li {
         list-style-type: none;
     }
 }
 
-.contentContainer
-{
-    width: 100%;
+.contentContainer {
     padding-bottom: 7em;
+    width: 100%;
 }
 
-.container
-{
-    padding: 0 .25em; 
-
+.container {
     @include center(75em);
+
+    padding: 0 .25em;
 }
 
-.textContainer
-{
+.textContainer {
     max-width: 35em;
 }
 
-.colContainer
-{
+.colContainer {
     @include col(1/2, $gutter: 10); @include cf();
 }
 
-.noTopMargin
-{
+.noTopMargin {
     margin-top: 0;
 }
-.noBottomMargin
-{
+.noBottomMargin {
     margin-bottom: 0;
 }
 
-.active
-{
+.active {
     border-left: 5px solid $green;
 }
 
-.hidden
-{
+.hidden {
     display: none;
 }
 
-.smaller
-{
+.smaller {
     font-size: .75em;
 }
 
-.bigger
-{
+.bigger {
     font-size: 1.75em;
-
     margin: 0;
 }
 
-.bgpurple
-{
+.bgpurple {
     background-color: $purple;
 }
 
-.purple
-{
+.purple {
     color: $purple;
 }
 
-.green
-{
+.green {
     color: $green;
 }
 
-.orange
-{
+.orange {
     color: $orange;
 }
 
-.black
-{
+.black {
     color: $black;
 }
 
-button
-{
-    display: block;
-
-    width: 100%;
-
-    border: none;
+button {
     background: none;
+    border: none;
+    display: block;
+    width: 100%;
 }
 
-form
-{
+form {
     position: relative;
 }
 
-.button
-{
+.button {
+    border: 3px solid $purple;
+    display: block;
     font-family: $title;
     font-size: 1.75em;
-
-    display: block;
-
     margin-top: .75em;
     padding: .5em;
-
-    transition: .3s;
     text-align: center;
-
-    border: 3px solid $purple;
-    &:hover
-    {
-        color: $black;
+    transition: .3s;
+    &:hover {
         background-color: $purple;
+        color: $black;
     }
 }
 
-input
-{
+input {
+    background-color: $green;
+    border: none;
+    color: $black;
     font-size: 2.5em;
-
-    width: 100%;
     margin-top: .75em;
     padding: .25em;
-
-    color: $black;
-    border: none;
-    background-color: $green;
+    width: 100%;
 }
 
-.formError
-{
+.formError {
     color: $orange;
-    p
-    {
+    p {
         font-size: 1.5em;
-
         margin: 0;
         padding: .5em;
     }
 }
 
-.headline
-{
-    margin-bottom: 1em;
-
+.headline {
     border-bottom: 3px solid $green;
+    margin-bottom: 1em;
 }
 
-::-webkit-input-placeholder
-{
+::-webkit-input-placeholder {
     color: darken($green, 25%);
 }
 
-:-moz-placeholder
-{
+:-moz-placeholder {
     /* Firefox 18- */
     color: darken($green, 25%);
 }
 
-::-moz-placeholder
-{
+::-moz-placeholder {
     /* Firefox 19+ */
     color: darken($green, 25%);
 }
 
-:-ms-input-placeholder
-{
+:-ms-input-placeholder {
     color: darken($green, 25%);
 }
 
@@ -255,124 +201,93 @@ input
 //   }
 // }
 
-.mainView.ng-enter
-{
+.mainView.ng-enter {
     animation: .5s fadeInDown ease;
 }
 
-.mainView.ng-leave
-{
+.mainView.ng-leave {
     animation: .5s fadeOutDown ease;
 }
 
 // Navicon Styles
 // ===============================================
-.navicon-button.ng-hide-remove
-{
+.navicon-button.ng-hide-remove {
     animation: 1s rubberBand ease;
     animation-iteration-count: 5;
 }
-.navicon-button
-{
-    position: relative;
-
+.navicon-button {
+    cursor: pointer;
     display: inline-block;
     float: right;
-
-    padding: 2.0625rem 1.5rem;
-
-    cursor: pointer;
-    user-select: none;
-    transition: $duration/2;
-
     opacity: .8;
+    padding: 2.0625rem 1.5rem;
+    position: relative;
+    transition: $duration/2;
+    user-select: none;
     .navicon:before,
-    .navicon:after
-    {
+    .navicon:after {
         transition: $duration/2;
     }
-    &:hover
-    {
-        transition: $duration;
-
+    &:hover {
         opacity: 1;
+        transition: $duration;
         .navicon:before,
-        .navicon:after
-        {
+        .navicon:after {
             transition: $duration/2;
         }
-        .navicon:before
-        {
+        .navicon:before {
             top: .825rem;
         }
-        .navicon:after
-        {
+        .navicon:after {
             top: -.825rem;
         }
     }
 }
 
-.navicon
-{
-    position: relative;
-
-    width: 2.5em;
-    height: .3125rem;
-
-    transition: $duration;
-
-    border-radius: 2.5rem;
+.navicon {
     background: $green;
+    border-radius: 2.5rem;
+    height: .3125rem;
+    position: relative;
+    transition: $duration;
+    width: 2.5em;
     &:before,
-    &:after
-    {
-        position: absolute;
-        z-index: -1;
-
-        display: block;
-
-        width: 2.5rem;
-        height: .3125rem;
-
-        content: '';
-        transition: $duration $duration/2;
-
-        border-radius: 1rem;
+    &:after {
         background: $green;
+        border-radius: 1rem;
+        content: '';
+        display: block;
+        height: .3125rem;
+        position: absolute;
+        transition: $duration $duration/2;
+        width: 2.5rem;
+        z-index: -1;
     }
-    &:before
-    {
+    &:before {
         top: .625rem;
     }
-    &:after
-    {
+    &:after {
         top: -.625rem;
     }
 }
 
 .open:not(.steps) .navicon:before,
-.open:not(.steps) .navicon:after
-{
+.open:not(.steps) .navicon:after {
     top: 0 !important;
 }
 
 .open .navicon:before,
-.open .navicon:after
-{
+.open .navicon:after {
     transition: $duration;
 }
 
-.open.x
-{
-    .navicon
-    {
+.open.x {
+    .navicon {
         background: transparent;
-        &:before
-        {
+        &:before {
             transform: rotate(-45deg);
         }
-        &:after
-        {
+        &:after {
             transform: rotate(45deg);
         }
     }
@@ -383,130 +298,101 @@ input
 // Header Styles
 // ===============================================
 
-header
-{
-    // font-family: $title;
-    width: 100%;
-    margin-bottom: 2em;
+header {
+    @include cf();
 
     color: $green;
+    margin-bottom: 2em;
+    // font-family: $title;
+    width: 100%;
+    p {
+        @include span(1/2);
 
-    @include cf();
-    p
-    {
         font-size: 3em;
-
         margin: 0;
         padding-left: .25em;
-
-        @include span(1/2);
     }
-    .smaller
-    {
+    .smaller {
         color: $white;
     }
     /* Smoother animations */
     & *,
     & *:before,
-    & *:after
-    {
+    & *:after {
         transform: translate3d(0,0,0);
     }
 }
 
-.headerDashboard
-{
+.headerDashboard {
+    @include span(1/1);
+
+    border-bottom: 2px solid $green;
+    border-top: 2px solid $green;
+    color: $white;
     font-family: $title;
     // background-color: $green;
     font-size: 1.5em;
-
     margin: 0 0 1em 0;
-
     text-align: center;
-
-    color: $white;
-    border-top: 2px solid $green;
-    border-bottom: 2px solid $green;
-
-    @include span(1/1);
-    .headerDashItem
-    {
-        padding: .5em 0;
-
+    .headerDashItem {
         @include col(1/5);
+
+        padding: .5em 0;
         // border-right: 3px solid $black;
     }
 }
 
 // Hidden Menu Styles
 // ===============================================
-.hiddenMenu.ng-hide-add
-{
+.hiddenMenu.ng-hide-add {
     animation: .5s slideOutRight ease;
 }
-.hiddenMenu.ng-hide-remove
-{
+.hiddenMenu.ng-hide-remove {
     animation: .5s slideInRight ease;
 }
-.hiddenMenu
-{
-    position: fixed;
-    z-index: 100;
-    top: 4em;
-    right: 0;
-    bottom: 0;
-
-    overflow: scroll;
-
-    width: 90%;
-    height: 100%;
-    padding-bottom: 5em;
-
-    color: $white;
+.hiddenMenu {
     background-color: transparentize(black, .1);
+    bottom: 0;
+    color: $white;
+    height: 100%;
+    overflow: scroll;
+    padding-bottom: 5em;
+    position: fixed;
+    right: 0;
+    top: 4em;
+    width: 90%;
+    z-index: 100;
     // background-color: $black;
-    .navDashboard
-    {
-        padding-left: .5em;
-
+    .navDashboard {
         @include col(1/2);
-        h2
-        {
+
+        padding-left: .5em;
+        h2 {
             border-bottom: 2px solid $purple;
         }
-        .dashItem
-        {
+        .dashItem {
+            background-color: $purple;
             font-family: $title;
             font-size: 1.5em;
-
-            width: 90%;
             height: 4em;
             margin: 1em auto;
-
             text-align: center;
-
-            background-color: $purple;
+            width: 90%;
         }
     }
-    ul
-    {
+    ul {
         @include col(1/2);
-        li
-        {
+        li {
             font-size: 2em;
-
             margin: .25em 0;
             padding: .25em 0 .25em .5em;
             // background-color: lighten($black, 5%);
-
             transition: .3s;
-            &:hover
-            {
-                color: $black;
+            &:hover {
                 background-color: $green;
+                color: $black;
             }
-            a
-            {
+            a {
                 display: block;
             }
         }
@@ -516,111 +402,92 @@ header
 // Login Form Styles
 // ===============================================
 
-.menuArrow
-{
-    display: inline-block;
-
-    transform: rotate(-45deg);
-
+.menuArrow {
     color: $purple;
+    display: inline-block;
+    transform: rotate(-45deg);
 }
 
 
 
-input[type=radio]
-{
+input[type=radio] {
     // font-size: 3em;
     display: none;
-    // margin: 1em 0;
-
-    padding: 0;
     // width: 4em;
     // width: 100%;
-
     opacity: 0;
+    // margin: 1em 0;
+    padding: 0;
 }
 
-input[type=radio] + label
-{
-    font-size: 2.5em;
-
+input[type=radio] + label {
+    border: 1px solid $green;
     display: block;
-
+    font-size: 2.5em;
     margin-top: .75em;
     padding: .25em;
-
-    border: 1px solid $green;
 }
 
-input[type=radio]:checked + label
-{
-    color: $black;
+input[type=radio]:checked + label {
     background-color: $green;
+    color: $black;
 }
 
-.center
-{
+.center {
     text-align: center;
 }
 
-// BMI Table Styles
-// ===============================================
-
-.bmiTable
-{
-    font-size: 1.25em;
-
-    width: 100%;
-    margin-top: 1.5em;
-    .select
-    {
-        background-color: $purple;
-    }
-    thead
-    {
-        font-family: $title;
-        font-size: 1.5em;
-
-        text-align: center;
-
-        color: $black;
-        background-color: $green;
-    }
-    th,
-    td
-    {
-        padding: .25em .5em;
-
-        border-bottom: 2px solid $green;
-    }
-    th
-    {
-        text-align: left;
-
-        background-color: transparentize($green, .5);
+.gqimage {
+    img {
+        border: 10px solid $orange;
     }
 }
 
-footer
-{
+// Table Styles
+// ===============================================
+
+.bmiTable {
     font-size: 1.25em;
-
-    position: fixed;
-    bottom: 0;
-
+    margin-top: 1.5em;
     width: 100%;
-    margin-top: 2em;
-    padding: 2em 1em 0;
+    .select {
+        background-color: $purple;
+    }
+    thead {
+        background-color: $green;
+        color: $black;
+        font-family: $title;
+        font-size: 1.5em;
+        text-align: center;
+    }
+    th,
+    td {
+        border-bottom: 2px solid $green;
+        padding: .25em .5em;
+    }
+    th {
+        background-color: transparentize($green, .5);
+        text-align: left;
+    }
+}
 
-    text-align: right;
-    p
-    {
-        color: $white;
-        i
-        {
-            float: left;
+// Footer Element Styles
+// ===============================================
 
-            color: $green;
-        }
+.footerLeft,
+.footerRight {
+    bottom: 0;
+    display: inline-block;
+    margin: .5em;
+    position: fixed;
+}
+
+.footerRight {
+    right: 0;
+}
+
+.footerLeft {
+    i {
+        color: $green;
     }
 }

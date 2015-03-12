@@ -2,9 +2,9 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>soarFitness app</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <!-- <meta name="viewport" content="width=device-width"> -->
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -13,15 +13,15 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
     <link href='http://fonts.googleapis.com/css?family=Roboto|Oswald' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <!-- endbuild -->
   </head>
   <body ng-app="trainingAssistantApp">
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <header ng-controller="NavCtrl">
+    <header ng-controller="NavCtrl" ng-cloak>
       <a ui-sref="home"><p><i class="fa fa-paper-plane-o"></i> <span class="smaller">soar</span>fitness<span class="smaller">.app</span></p></a>
       <a class="navicon-button x" ng-click="showMenu=!showMenu" ng-class="{'open': showMenu}"  ng-show="client.isLoggedIn">
         <div class="navicon"></div>
@@ -63,10 +63,9 @@
     </header>
     <!-- Add your site or application content here -->
     <div ui-view class="mainView"></div>
-    <footer>
-      <p><i class="fa fa-paper-plane-o"></i> &copy; <a href="http://www.paulhirschi.com" target="_blank"><span class="green">paul</span>hirschi</a></p>
-    </footer>
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+      <p class="footerLeft"><i class="fa fa-paper-plane-o"></i> Extremely Beta</p>
+      <p class="footerRight"><a href="http://www.paulhirschi.com" target="_blank">&copy; <span class="green">paul</span>hirschi</a></p>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --    >
     <!-- <script>
     !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
     (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
