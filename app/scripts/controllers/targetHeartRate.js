@@ -14,7 +14,7 @@ app.controller('TargetHRCtrl', ['$scope', 'appService',
     $scope.getThr = function(min, max, zone) {
       appService.getThr(min, max, zone);
       $scope.client.thr = appService.client.thr;
-    }
+    };
 
 
   }

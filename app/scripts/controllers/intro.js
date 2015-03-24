@@ -12,7 +12,5 @@ app.controller('IntroCtrl', ['$scope', 'appService',
 
     $scope.client = appService.client;
 
-
-
   }
 ]);

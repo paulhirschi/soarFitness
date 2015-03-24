@@ -40,7 +40,7 @@ app.controller('BodyCompCtrl', ['$scope', 'appService',
       appService.idealWeightCal();
       $scope.client.idealWeight = appService.client.idealWeight;
       $scope.desiredPerc = '';
-    }
+    };
 
   }
 ]);
