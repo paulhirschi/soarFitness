@@ -45,5 +45,5 @@ app.config(function($stateProvider) {
       url: '/targethr',
       templateUrl: 'views/heartrate.html',
       controller: 'TargetHRCtrl as targethr'
-    })
+    });
 });

@@ -42,21 +42,19 @@ app.controller('NavCtrl', ['$scope', '$rootScope', '$state', 'appService',
 
     $rootScope.$on('$stateChangeStart',
       function(event, toState, toParams, fromState, fromParams) {
-        var isHome = toState.name === 'home';
         $scope.showMenu = false;
         console.log('state change start');
-        // if ($scope.client.isLoggedIn) {
-        //   return;
-        // } else if (isHome) {
-        //   return
-        // } else {
-        //   console.log('resetApp');
-        //   $state.go('home');
-        //   event.preventDefault;
-        // }
+        console.log('Client Logged In Status: ' + $scope.client.isLoggedIn);
+        if ($scope.client.isLoggedIn) {
+          return
+        }
+        if (toState.name === 'home') {
+          return
+        }
+        if (!$scope.client.isLoggedIn) {
+          event.preventDefault();
+          $state.go('home');
+        }
       });
-
-
-
   }
 ]);

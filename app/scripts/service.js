@@ -52,7 +52,7 @@ app.factory('appService', function() {
   service.bodyFatCalc = function() {
     var log10 = function(val) {
       return Math.log(val) / Math.LN10;
-    }
+    };
     var L = service.bodyFatBi + service.bodyFatTri + service.bodyFatSub + service.bodyFatIliac;
     var A = service.client.age;
     var D;
@@ -90,12 +90,12 @@ app.factory('appService', function() {
     service.client.fatMass = parseFloat(fatMassTemp.toFixed(2));
     var leanMassTemp = service.client.weight - service.client.fatMass;
     service.client.leanMass = parseFloat(leanMassTemp.toFixed(2));
-  }
+  };
 
   service.idealWeightCal = function() {
     var idealWeightTemp = service.client.leanMass / (1 - (service.desiredPerc / 100));
     service.client.idealWeight = parseFloat(idealWeightTemp.toFixed(2));
-  }
+  };
 
   return service;
 });

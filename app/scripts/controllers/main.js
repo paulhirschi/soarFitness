@@ -15,7 +15,7 @@ app.controller('MainCtrl', ['$scope', '$state', 'appService',
       appService.client.name = $scope.client.name;
       appService.client.age = $scope.client.age;
       appService.login();
-      $state.go('intro');
+      $state.go('dashboard');
     };
 
   }
