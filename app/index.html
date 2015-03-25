@@ -30,11 +30,13 @@
         <div class="navDashboard">
           <h2>Quick Look Dashboard</h2>
           <h4>Stats for <span class="green">{{ client.name }}</span>:</h4>
-          <div class="dashItem">Age:<br><span class="bigger black">{{ client.age }}</span></div>
-          <div class="dashItem">Gender:<br><span class="bigger black">{{ client.gender }}</span></div>
-          <div class="dashItem">Max HR:<br><span class="bigger black">{{ client.mhr }}</span></div>
-          <div class="dashItem">Target HR:<br><span class="bigger black">{{ client.thr }}</span></div>
-          <div class="dashItem">BMI:<br><span class="bigger black">{{ client.bmi }}</span></div>
+          <div class="dashItem" ng-show="client.age">Age:<br><span class="bigger black">{{ client.age }}</span></div>
+          <div class="dashItem" ng-show="client.gender">Gender:<br><span class="bigger black">{{ client.gender }}</span></div>
+          <div class="dashItem" ng-show="client.weight">Weight:<br><span class="bigger black">{{ client.weight }}</span></div>
+          <div class="dashItem" ng-show="client.mhr">Max HR:<br><span class="bigger black">{{ client.mhr }}</span></div>
+          <div class="dashItem" ng-show="client.thr">Target HR:<br><span class="bigger black">{{ client.thr }}</span></div>
+          <div class="dashItem" ng-show="client.bmi">BMI:<br><span class="bigger black">{{ client.bmi }}</span></div>
+          <div class="dashItem" ng-show="client.fatPercent">Body Fat %:<br><span class="bigger black">{{ client.fatPercent + '%' }}</span></div>
         </div>
         <ul>
           <li ng-repeat="item in menu" ui-sref-active="active" class="active"><a ng-click="showMenu=!showMenu" ui-sref="{{item.state}}" >{{item.label}}</a></li>
