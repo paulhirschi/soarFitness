@@ -41,7 +41,7 @@
           <li class="resetApp"><a ng-click="showMenu=!showMenu; resetApp()" ui-sref="home">Reset Data</a></li>
         </ul>
       </div>
-      <div class="headerDashboard" ng-show="client.isLoggedIn">
+      <!-- <div class="headerDashboard" ng-show="client.isLoggedIn">
         <div class="container">
           <div class="headerDashItem" ng-show="client.name">
             <span class="purple">Client: </span><br>{{ client.name }}
@@ -59,7 +59,7 @@
             <span class="purple">BMI: </span><br>{{ client.bmi }}
           </div>
         </div>
-      </div>
+      </div> -->
     </header>
     <!-- Add your site or application content here -->
     <div ui-view class="mainView"></div>

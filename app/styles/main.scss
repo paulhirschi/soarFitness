@@ -63,7 +63,6 @@ ul {
 
 .container {
     @include center(75em);
-
     padding: 0 .25em;
 }
 
@@ -490,4 +489,42 @@ input[type=radio]:checked + label {
     i {
         color: $green;
     }
+}
+
+// Dashboard Styles
+// ===============================================
+.dashboardSectionTitle {
+  @include span(1/1);
+  h3 {
+    background-color: $purple;
+    margin-bottom: 0.5em;
+    padding: 0.25em 0.5em;
+  }
+}
+.dashboardContainer {
+  @include span(1/1);
+}
+.dashboardItem {
+  @include cf();
+  @include col(1/3, $cycle: 3, $gutter: 2);
+  border: 3px solid $green;
+  padding: 0 0 1em 0;
+  height: 17em;
+  margin-bottom: 1em;
+  h4 {
+    text-align: center;
+    background-color: $green;
+    color: $black;
+    margin: 0;
+    padding: 0.5em 0;
+  }
+  h2 {
+    text-align: center;
+    padding: 0 1em;
+  }
+  p {
+    padding: 0 1em;
+    text-align: center;
+    font-size: 1.25em;
+  }
 }

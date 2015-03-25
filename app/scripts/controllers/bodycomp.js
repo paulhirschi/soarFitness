@@ -13,20 +13,18 @@ app.controller('BodyCompCtrl', ['$scope', 'appService',
     $scope.client = appService.client;
 
     $scope.bmiCalc = function() {
-      appService.bmiWeight = $scope.bmiWeight;
       appService.bmiHeight = $scope.bmiHeight;
       appService.getBMI();
       $scope.client.bmi = appService.client.bmi;
       $scope.client.weight = appService.client.weight;
-      $scope.bmiWeight = '';
       $scope.bmiHeight = '';
     };
 
     $scope.bodyFatCalc = function() {
-      appService.bodyFatBi = $scope.bodyFatBi;
-      appService.bodyFatTri = $scope.bodyFatTri;
-      appService.bodyFatSub = $scope.bodyFatSub;
-      appService.bodyFatIliac = $scope.bodyFatIliac;
+      appService.client.bodyFatBi = $scope.bodyFatBi;
+      appService.client.bodyFatTri = $scope.bodyFatTri;
+      appService.client.bodyFatSub = $scope.bodyFatSub;
+      appService.client.bodyFatIliac = $scope.bodyFatIliac;
       appService.bodyFatCalc();
       $scope.client.fatPercent = appService.client.fatPercent;
       $scope.bodyFatBi = '';
@@ -36,7 +34,7 @@ app.controller('BodyCompCtrl', ['$scope', 'appService',
     };
 
     $scope.idealWeightCalc = function() {
-      appService.desiredPerc = $scope.desiredPerc;
+    appService.client.desiredPerc = $scope.client.desiredPerc;
       appService.idealWeightCal();
       $scope.client.idealWeight = appService.client.idealWeight;
       $scope.desiredPerc = '';

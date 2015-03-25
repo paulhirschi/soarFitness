@@ -81,8 +81,8 @@
       Fat%: <span class="green">{{ client.fatPercent }}</span>
       </h1>
       <form ng-submit="bodyFatCalc()">
-        <input type="number" ng-model="bodyFatBi" placeholder="bicept" required>
-        <input type="number" ng-model="bodyFatTri" placeholder="tricept" required>
+        <input type="number" ng-model="bodyFatBi" placeholder="bicep" required>
+        <input type="number" ng-model="bodyFatTri" placeholder="tricep" required>
         <input type="number" ng-model="bodyFatSub" placeholder="subscapular" required>
         <input type="number" ng-model="bodyFatIliac" placeholder="iliac crest" required>
         <button type="submit" class="button">Calculate</button>
@@ -145,7 +145,7 @@
       Ideal Weight: <span class="green">{{ client.idealWeight }}</span>
       </h1>
       <form ng-submit="idealWeightCalc()">
-        <input type="number" ng-model="desiredPerc" placeholder="desired % body fat" required>
+        <input type="number" ng-model="client.desiredPerc" placeholder="desired % body fat" required>
         <button type="submit" class="button">Calculate</button>
       </form>
     </div>

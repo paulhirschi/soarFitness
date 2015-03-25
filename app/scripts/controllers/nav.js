@@ -26,35 +26,33 @@ app.controller('NavCtrl', ['$scope', '$rootScope', '$state', 'appService',
     };
 
     $scope.menu = [{
+      label: 'Dashboard',
+      state: 'dashboard'
+    }, {
       label: 'Target HR',
       state: 'targethr'
     }, {
       label: 'Body Composition',
       state: 'bodycomp'
     }, {
-      label: 'Dashboard',
-      state: 'dashboard'
-    }, {
       label: 'About',
       state: 'about'
     }];
 
 
-    $rootScope.$on('$stateChangeStart',
-      function(event, toState, toParams, fromState, fromParams) {
-        $scope.showMenu = false;
-        console.log('state change start');
-        console.log('Client Logged In Status: ' + $scope.client.isLoggedIn);
-        if ($scope.client.isLoggedIn) {
-          return
-        }
-        if (toState.name === 'home') {
-          return
-        }
-        if (!$scope.client.isLoggedIn) {
-          event.preventDefault();
-          $state.go('home');
-        }
-      });
+  $rootScope.$on('$stateChangeStart',
+    function(event, toState, toParams, fromState, fromParams) {
+      $scope.showMenu = false;
+      if ($scope.client.isLoggedIn) {
+        return
+      }
+      if (toState.name === 'home') {
+        return
+      }
+      if (!$scope.client.isLoggedIn) {
+        event.preventDefault();
+        $state.go('home');
+      }
+    });
   }
 ]);

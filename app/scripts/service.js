@@ -23,10 +23,15 @@ app.factory('appService', function() {
     thr: '',
     zone: '',
     bmi: '',
+    bodyFatBi: '',
+    bodyFatTri: '',
+    bodyFatSub: '',
+    bodyFatIliac: '',
     fatPercent: '',
     fatMass: '',
     leanMass: '',
     idealWeight: '',
+    desiredPerc: '',
     isLoggedIn: ''
   };
 
@@ -53,7 +58,7 @@ app.factory('appService', function() {
     var log10 = function(val) {
       return Math.log(val) / Math.LN10;
     };
-    var L = service.bodyFatBi + service.bodyFatTri + service.bodyFatSub + service.bodyFatIliac;
+    var L = service.client.bodyFatBi + service.client.bodyFatTri + service.client.bodyFatSub + service.client.bodyFatIliac;
     var A = service.client.age;
     var D;
     if (service.client.gender === 'Male') {
@@ -93,7 +98,7 @@ app.factory('appService', function() {
   };
 
   service.idealWeightCal = function() {
-    var idealWeightTemp = service.client.leanMass / (1 - (service.desiredPerc / 100));
+    var idealWeightTemp = service.client.leanMass / (1 - (service.client.desiredPerc / 100));
     service.client.idealWeight = parseFloat(idealWeightTemp.toFixed(2));
   };
 

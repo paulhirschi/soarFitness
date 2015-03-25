@@ -1,13 +1,88 @@
 <div class="contentContainer">
   <div class="container">
-    <h3 class="headline">
-      Dashboard
-    </h3>
-    <h2>
-      Stats for {{ client.name }}
-    </h2>
-    <p>
-      Rest of stuff here.
-    </p>
+    <div class="dashboardContainer">
+      <h3 class="headline">
+      Dashboard: To get started, visit the menu.
+      </h3>
+      <h2>
+      Stats for <span class="green">{{ client.name }}</span>
+      </h2>
+      <div class="dashboardSectionTitle">
+        <h3>
+        Questionaire Results *FEATURE NOT AVAILABLE. Coming soon.
+        </h3>
+      </div>
+      <div class="dashboardItem">
+        <h4>
+        PAR-Q
+        </h4>
+        <h2 class="orange">At Risk</h2>
+        <p>Please have {{ client.name }} consult <span ng-show="client.gender === 'male'">his</span><span ng-show="client.gender === 'female'">her</span> physician before beginning a training program.</p>
+      </div>
+      <div class="dashboardItem">
+        <h4>
+        Occupation/Lifestyle
+        </h4>
+        <h2 class="green">No Risk</h2>
+      </div>
+      <div class="dashboardSectionTitle">
+        <h3>
+        Body Composition
+        </h3>
+      </div>
+      <div class="dashboardItem">
+        <h4>
+        BMI
+        </h4>
+        <h2>{{ client.bmi }}</h2>
+      </div>
+      <div class="dashboardItem">
+        <h4>
+        Body Fat Percentage
+        </h4>
+        <h2 ng-show="client.fatPercent">{{ client.fatPercent + ' %' }}</h2>
+      </div>
+      <div class="dashboardItem">
+        <h4>
+        Fat Mass
+        </h4>
+        <h2 ng-show="client.fatMass">{{ client.fatMass + ' lbs.' }}</h2>
+      </div>
+      <div class="dashboardItem">
+        <h4>
+        Lean Mass
+        </h4>
+        <h2 ng-show="client.leanMass">{{ client.leanMass + ' lbs.' }}</h2>
+      </div>
+      <div class="dashboardItem">
+        <h4>
+        Ideal Weight
+        </h4>
+        <h2 ng-show="client.idealWeight">{{ client.idealWeight + ' lbs.' }}</h2>
+        <p ng-show="client.idealWeight">
+          Based on a Body Fat Percentage goal of <span class="green">{{ client.desiredPerc + ' %' }}</span>
+        </p>
+      </div>
+      <div class="dashboardSectionTitle">
+        <h3>
+        Heart Rate Composition
+        </h3>
+      </div>
+      <div class="dashboardItem">
+        <h4>
+        Max Heart Rate
+        </h4>
+        <h2 ng-show="client.mhr">{{ client.mhr + ' BMP' }}</h2>
+      </div>
+      <div class="dashboardItem">
+        <h4>
+        Target Heart Rate
+        </h4>
+        <h2 ng-show="client.thr">{{ client.thr + ' BPM' }}</h2>
+        <p ng-show="client.thr">
+          In training zone <span class="green">{{ client.zone }}</span>
+        </p>
+      </div>
+    </div>
   </div>
 </div>
