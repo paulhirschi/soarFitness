@@ -30,13 +30,27 @@
         <div class="navDashboard">
           <h2>Quick Look Dashboard</h2>
           <h4>Stats for <span class="green">{{ client.name }}</span>:</h4>
-          <div class="dashItem" ng-show="client.age">Age:<br><span class="bigger black">{{ client.age }}</span></div>
-          <div class="dashItem" ng-show="client.gender">Gender:<br><span class="bigger black">{{ client.gender }}</span></div>
-          <div class="dashItem" ng-show="client.weight">Weight:<br><span class="bigger black">{{ client.weight }}</span></div>
-          <div class="dashItem" ng-show="client.mhr">Max HR:<br><span class="bigger black">{{ client.mhr }}</span></div>
-          <div class="dashItem" ng-show="client.thr">Target HR:<br><span class="bigger black">{{ client.thr }}</span></div>
-          <div class="dashItem" ng-show="client.bmi">BMI:<br><span class="bigger black">{{ client.bmi }}</span></div>
-          <div class="dashItem" ng-show="client.fatPercent">Body Fat %:<br><span class="bigger black">{{ client.fatPercent + '%' }}</span></div>
+          <div class="dashItem" ng-show="client.age">
+            Age:<br><span class="bigger black">{{ client.age }}</span>
+          </div>
+          <div class="dashItem" ng-show="client.gender">
+            Gender:<br><span class="bigger black">{{ client.gender }}</span>
+          </div>
+          <div class="dashItem" ng-show="client.weight">
+            Weight:<br><span class="bigger black">{{ client.weight }}</span>
+          </div>
+          <div class="dashItem" ng-show="client.mhr">
+            Max HR:<br><span class="bigger black">{{ client.mhr }}</span>
+          </div>
+          <div class="dashItem" ng-show="client.thr">
+            Target HR:<br><span class="bigger black">{{ client.thr }}</span>
+          </div>
+          <div class="dashItem" ng-show="client.bmi">
+            BMI:<br><span class="bigger black">{{ client.bmi }}</span>
+          </div>
+          <div class="dashItem" ng-show="client.fatPercent">
+            Body Fat %:<br><span class="bigger black">{{ client.fatPercent + '%' }}</span>
+          </div>
         </div>
         <ul>
           <li ng-repeat="item in menu" ui-sref-active="active" class="active"><a ng-click="showMenu=!showMenu" ui-sref="{{item.state}}" >{{item.label}}</a></li>
@@ -65,8 +79,8 @@
     </header>
     <!-- Add your site or application content here -->
     <div ui-view class="mainView"></div>
-      <p class="footerLeft"><i class="fa fa-paper-plane-o"></i> Extremely Beta</p>
-      <p class="footerRight"><a href="http://www.paulhirschi.com" target="_blank">&copy; <span class="green">paul</span>hirschi</a></p>
+    <p class="footerLeft"><i class="fa fa-paper-plane-o"></i> Extremely Beta</p>
+    <p class="footerRight"><a href="http://www.paulhirschi.com" target="_blank">&copy; <span class="green">paul</span>hirschi</a></p>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --    >
     <!-- <script>
     !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
